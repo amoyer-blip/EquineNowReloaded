@@ -62,6 +62,29 @@ namespace EquineNowReloaded.Services
                 return query.ToArray();
             }
         }
+        public HorseDetail GetHorseById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Horses
+                    .Single(e => e.HorseId == id && e.EmployeeId == _userId);
+                return
+                    new HorseDetail
+                    {
+                        HorseId = entity.HorseId,
+                        HorseName = entity.HorseName,
+                        ImmediateMedical = entity.ImmediateMedical,
+                        IntakeNotes = entity.IntakeNotes,
+                        Injury = entity.Injury,
+                        Color = entity.Color,
+                        AuctionName = entity.AuctionName,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+        }
 
     }
 }

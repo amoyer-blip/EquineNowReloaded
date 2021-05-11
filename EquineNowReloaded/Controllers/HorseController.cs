@@ -2,9 +2,6 @@
 using EquineNowReloaded.Services;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace EquineNowReloaded.Controllers
@@ -38,12 +35,32 @@ namespace EquineNowReloaded.Controllers
                 return View(model);
             }
 
+            var service = CreateHorseService();
+
+            if (service.CreateHorse(model))
+            {
+                TempData["SaveResult"] = "The horse has been added.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Horse could not be created.");
+
+            return View(model);
+        }
+
+        private HorseService CreateHorseService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new HorseService(userId);
+            return service;
+        }
 
-            service.CreateHorse(model);
+        public ActionResult Details(int id)
+        {
+            var svc = CreateHorseService();
+            var model = svc.GetHorseById(id);
 
-            return RedirectToAction("Index");
+            return View(model);
         }
     }
 }

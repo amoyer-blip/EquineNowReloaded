@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HorseCreate.cs" />
+    <Compile Include="HorseDetail.cs" />
     <Compile Include="HorseListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
