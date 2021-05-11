@@ -62,5 +62,48 @@ namespace EquineNowReloaded.Controllers
 
             return View(model);
         }
+
+        public ActionResult Edit(int id)       
+        {
+            var service = CreateHorseService();
+            var detail = service.GetHorseById(id);
+            var model =
+                new HorseEdit
+                {
+                    HorseId = detail.HorseId,
+                    HorseName = detail.HorseName,
+                    ImmediateMedical = detail.ImmediateMedical,
+                    IntakeNotes = detail.IntakeNotes,
+                    Injury = detail.Injury,
+                    Color = detail.Color,
+                    AuctionName = detail.AuctionName
+                };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, HorseEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.HorseId != id)
+            {
+                ModelState.AddModelError("", "The HorseId entered does not match.");
+                return View(model);
+            }
+
+            var service = CreateHorseService();
+
+            if (service.UpdateHorse(model))
+            {
+                TempData["SaveResult"] = "The horse's information has been updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Unable to update.");
+            return View(model);
+        }
     }
 }

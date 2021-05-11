@@ -86,5 +86,27 @@ namespace EquineNowReloaded.Services
             }
         }
 
+        public bool UpdateHorse(HorseEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Horses
+                    .Single(e => e.HorseId == model.HorseId && e.EmployeeId == _userId);
+
+                entity.HorseId = model.HorseId;
+                entity.HorseName = model.HorseName;
+                entity.ImmediateMedical = model.ImmediateMedical;
+                entity.IntakeNotes = model.IntakeNotes;
+                entity.Injury = model.Injury;
+                entity.Color = model.Color;
+                entity.AuctionName = model.AuctionName;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }

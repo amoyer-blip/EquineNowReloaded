@@ -1,0 +1,90 @@
+﻿@model EquineNowReloaded.Models.HorseDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HorseDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HorseId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HorseId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HorseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HorseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImmediateMedical)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImmediateMedical)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IntakeNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IntakeNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Injury)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Injury)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuctionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuctionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HorseId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
