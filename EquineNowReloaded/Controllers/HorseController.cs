@@ -1,4 +1,5 @@
 ﻿using EquineNowReloaded.Models;
+using EquineNowReloaded.Services;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -12,14 +13,13 @@ namespace EquineNowReloaded.Controllers
     public class HorseController : Controller
     {
         // GET: Note
-        //Displays all the notes for the current use
+        //Displays all horses for the current user 
         public ActionResult Index()
         {
-            //var userId = Guid.Parse(User.Identity.GetUserId());
-            //var service = new HorseService(userId);
-            //var model = service.GetHorses();
-
-            var model = new HorseListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new HorseService(userId);
+            var model = service.GetHorses();
+            //var model = new HorseListItem[0];
 
             return View(model);
         }
@@ -35,16 +35,15 @@ namespace EquineNowReloaded.Controllers
         {
             if (!ModelState.IsValid)
             {
-                //return View(model);
+                return View(model);
             }
-            return View(model);
 
-            //var userId = Guid.Parse(User.Identity.GetUserId());
-            //var service = new HorseService(userId);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new HorseService(userId);
 
-            //service.CreateHorse(model);
+            service.CreateHorse(model);
 
-            //return RedirectToAction("Index");
+            return RedirectToAction("Index");
         }
     }
 }

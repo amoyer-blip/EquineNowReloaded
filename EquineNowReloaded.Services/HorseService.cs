@@ -54,6 +54,8 @@ namespace EquineNowReloaded.Services
                         {
                             HorseId = e.HorseId,
                             HorseName = e.HorseName,
+                            Color = e.Color,
+                            IntakeNotes = e.IntakeNotes,
                             CreatedUtc = e.CreatedUtc
                         }
                         );
