@@ -108,5 +108,20 @@ namespace EquineNowReloaded.Services
             }
         }
 
+        public bool DeleteHorse(int horseId)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Horses
+                    .Single(e => e.HorseId == horseId && e.EmployeeId == _userId);
+
+                ctx.Horses.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }

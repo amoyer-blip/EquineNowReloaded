@@ -239,6 +239,8 @@
     <Content Include="Views\Horse\Create.cshtml" />
     <Content Include="Views\Horse\Details.cshtml" />
     <Content Include="Views\Horse\Edit.cshtml" />
+    <Content Include="Views\Horse\Delete.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTimeOffSet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

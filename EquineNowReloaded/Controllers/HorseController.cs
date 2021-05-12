@@ -63,7 +63,7 @@ namespace EquineNowReloaded.Controllers
             return View(model);
         }
 
-        public ActionResult Edit(int id)       
+        public ActionResult Edit(int id)
         {
             var service = CreateHorseService();
             var detail = service.GetHorseById(id);
@@ -88,7 +88,7 @@ namespace EquineNowReloaded.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if(model.HorseId != id)
+            if (model.HorseId != id)
             {
                 ModelState.AddModelError("", "The HorseId entered does not match.");
                 return View(model);
@@ -104,6 +104,30 @@ namespace EquineNowReloaded.Controllers
 
             ModelState.AddModelError("", "Unable to update.");
             return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateHorseService();
+            var model = svc.GetHorseById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteItem(int id)
+        {
+            var service = CreateHorseService();
+
+            service.DeleteHorse(id);
+
+            TempData["SaveResult"] = "Horse deleted.";
+
+            return RedirectToAction("Index");
+
         }
     }
 }
