@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuctionCreate.cs" />
+    <Compile Include="AuctionDetail.cs" />
+    <Compile Include="AuctionEdit.cs" />
+    <Compile Include="AuctionListItem.cs" />
     <Compile Include="HorseCreate.cs" />
     <Compile Include="HorseDetail.cs" />
     <Compile Include="HorseEdit.cs" />

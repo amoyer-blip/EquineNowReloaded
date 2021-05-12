@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EquineNowReloaded.Data
+namespace EquineNowReloaded.Models
 {
-    public class Auction
+    public class AuctionDetail
     {
-        [Required]
-        public Guid EmployeeId { get; set; }
-
         [Key]
         public int AuctionId { get; set; }
 
@@ -31,8 +27,5 @@ namespace EquineNowReloaded.Data
         [Required]
         [Display(Name = "Date of Auction")]
         public DateTime AuctionDate { get; set; }
-
-        public virtual List<Horse> Horses { get; set; } = new List<Horse>();
-
     }
 }

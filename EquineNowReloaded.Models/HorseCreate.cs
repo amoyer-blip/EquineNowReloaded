@@ -11,7 +11,7 @@ namespace EquineNowReloaded.Models
     {
         [Required]
         [Display(Name = "Horse's Name")]
-        [MinLength(2, ErrorMessage = "Please eneter at least 2 characters.")]
+        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(30, ErrorMessage = "There are too many characters in this field.")]
         public string HorseName { get; set; }
 
@@ -27,7 +27,6 @@ namespace EquineNowReloaded.Models
         [Required]
         [Display(Name = "Color and Markings")]
         public string Color { get; set; }
-
 
         [Display(Name = "Auction")]
         public string AuctionName { get; set; }

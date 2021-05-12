@@ -34,6 +34,7 @@ namespace ElevenNoteReloaded.Data
         }
 
         public DbSet<Horse> Horses { get; set; }
+        public DbSet<Auction> Auctions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

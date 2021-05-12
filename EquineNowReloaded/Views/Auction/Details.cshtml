@@ -1,0 +1,50 @@
+﻿@model EquineNowReloaded.Models.AuctionDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AuctionDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AuctionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuctionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuctionLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuctionLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalHorsesRescued)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalHorsesRescued)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuctionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuctionDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AuctionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
