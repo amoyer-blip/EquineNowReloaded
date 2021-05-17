@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EquineNowReloaded.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -22,5 +23,7 @@ namespace EquineNowReloaded.Models
 
         [Display(Name = "Date of Auction")]
         public DateTime AuctionDate { get; set; }
+
+        public virtual List<Horse> Horses { get; set; }
     }
 }

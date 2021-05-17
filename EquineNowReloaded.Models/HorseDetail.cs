@@ -27,6 +27,8 @@ namespace EquineNowReloaded.Models
         [Display(Name = "Color and Markings")]
         public string Color { get; set; }
 
+        public int? AuctionId { get; set; }
+
 
         [Display(Name = "Auction")]
         public string AuctionName { get; set; }

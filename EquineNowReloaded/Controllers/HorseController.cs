@@ -70,7 +70,7 @@ namespace EquineNowReloaded.Controllers
             var model =
                 new HorseEdit
                 {
-                    HorseId = detail.HorseId,
+                   // HorseId = detail.HorseId,
                     HorseName = detail.HorseName,
                     ImmediateMedical = detail.ImmediateMedical,
                     IntakeNotes = detail.IntakeNotes,

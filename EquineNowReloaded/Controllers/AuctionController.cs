@@ -1,4 +1,5 @@
-﻿using EquineNowReloaded.Models;
+﻿using EquineNowReloaded.Data;
+using EquineNowReloaded.Models;
 using EquineNowReloaded.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -126,7 +127,6 @@ namespace EquineNowReloaded.Controllers
             TempData["SaveResult"] = "Auction deleted.";
 
             return RedirectToAction("Index");
-
         }
     }
 }

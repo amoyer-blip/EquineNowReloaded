@@ -32,6 +32,10 @@ namespace EquineNowReloaded.Data
         [Display(Name = "Date of Auction")]
         public DateTime AuctionDate { get; set; }
 
+        //[ForeignKey(nameof(Horse))]
+        //public int? HorseId { get; set; }
+        //public virtual Horse Horse { get; set; }
+
         public virtual List<Horse> Horses { get; set; } = new List<Horse>();
 
     }

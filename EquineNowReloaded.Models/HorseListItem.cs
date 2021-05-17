@@ -9,11 +9,11 @@ namespace EquineNowReloaded.Models
 {
     public class HorseListItem
     {
-        [Display(Name = "Horse's Name")]
-        public string HorseName { get; set; }
-
         [Display(Name = "Horse Id")]
         public int HorseId { get; set; }
+
+        [Display(Name = "Horse's Name")]
+        public string HorseName { get; set; }
 
         [Display(Name = "Color and Markings")]
         public string Color { get; set; }

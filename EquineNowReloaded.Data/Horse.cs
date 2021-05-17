@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EquineNowReloaded.Data
 {
-    public enum Color { Sorrel = 1, Bay, Palomino, Dun, DappleGray, Buckskin, Roan, Paint, Appaloosa, Gray, Chestnut, Black }
+    //public enum Color { Sorrel = 1, Bay, Palomino, Dun, DappleGray, Buckskin, Roan, Paint, Appaloosa, Gray, Chestnut, Black }
     public class Horse
     {
         [Key]
@@ -36,11 +36,11 @@ namespace EquineNowReloaded.Data
         [Display(Name = "Color and Markings")]
         public string Color { get; set; }
 
-        //[ForeignKey(nameof(Auction))]
         public string AuctionName { get; set; }
 
-        [ForeignKey(nameof(Employee))]
-        public int Employee { get; }
+        [ForeignKey(nameof(Auction))]
+        public int? AuctionId { get; set; }
+        public virtual Auction Auction { get; set; }
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

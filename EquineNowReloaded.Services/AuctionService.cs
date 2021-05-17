@@ -51,7 +51,7 @@ namespace EquineNowReloaded.Services
                             AuctionName = e.AuctionName,
                             AuctionLocation = e.AuctionLocation,
                             AuctionDate = e.AuctionDate,
-                            TotalHorsesRescued = e.TotalHorsesRescued
+                            TotalHorsesRescued = e.TotalHorsesRescued,
                         }
                         );
                 return query.ToArray();
@@ -73,7 +73,8 @@ namespace EquineNowReloaded.Services
                        AuctionName = entity.AuctionName,
                        AuctionLocation = entity.AuctionLocation,
                        AuctionDate = entity.AuctionDate,
-                       TotalHorsesRescued = entity.TotalHorsesRescued
+                       TotalHorsesRescued = entity.TotalHorsesRescued,
+                       Horses=entity.Horses
                     };
             }
         }

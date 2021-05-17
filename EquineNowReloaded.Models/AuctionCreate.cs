@@ -25,6 +25,8 @@ namespace EquineNowReloaded.Models
 
         [Display(Name = "Date of Auction")]
         public DateTime AuctionDate { get; set; }
+
+
     }
 }
 

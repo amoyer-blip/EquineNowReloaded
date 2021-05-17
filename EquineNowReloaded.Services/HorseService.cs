@@ -29,17 +29,24 @@ namespace EquineNowReloaded.Services
                     IntakeNotes = model.IntakeNotes,
                     Injury = model.Injury,
                     Color = model.Color,
-                    AuctionName = model.AuctionName
+                    AuctionId = (model.AuctionId is null) ? null : model.AuctionId,
+                    AuctionName = model.AuctionName,
+                    CreatedUtc = DateTimeOffset.Now
                 };
 
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Horses.Add(entity);
+                if (entity.AuctionId != null)
+                {
+                    var auction = ctx.Auctions.SingleOrDefault(a => a.AuctionId == entity.AuctionId);
+                    auction.Horses.Add(entity);
+                }
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        // See all horses by employee 
+     
         public IEnumerable<HorseListItem> GetHorses()
         {
             using (var ctx = new ApplicationDbContext())
@@ -55,8 +62,7 @@ namespace EquineNowReloaded.Services
                             HorseId = e.HorseId,
                             HorseName = e.HorseName,
                             Color = e.Color,
-                            IntakeNotes = e.IntakeNotes,
-                            CreatedUtc = e.CreatedUtc
+                            IntakeNotes = e.IntakeNotes
                         }
                         );
                 return query.ToArray();
@@ -78,10 +84,11 @@ namespace EquineNowReloaded.Services
                         ImmediateMedical = entity.ImmediateMedical,
                         IntakeNotes = entity.IntakeNotes,
                         Injury = entity.Injury,
-                        Color = entity.Color,
+                        Color = entity.Color,  
+                        AuctionId =(entity.AuctionId is null) ? null : entity.AuctionId,
                         AuctionName = entity.AuctionName,
                         CreatedUtc = entity.CreatedUtc,
-                        ModifiedUtc = entity.ModifiedUtc
+                       
                     };
             }
         }
@@ -110,7 +117,7 @@ namespace EquineNowReloaded.Services
 
         public bool DeleteHorse(int horseId)
         {
-            using(var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
