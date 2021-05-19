@@ -98,6 +98,14 @@
     <Compile Include="Migrations\202105141612552_HorseList.Designer.cs">
       <DependentUpon>202105141612552_HorseList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105191511562_shit.cs" />
+    <Compile Include="Migrations\202105191511562_shit.Designer.cs">
+      <DependentUpon>202105191511562_shit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105191517435_TestVetCheckCreate.cs" />
+    <Compile Include="Migrations\202105191517435_TestVetCheckCreate.Designer.cs">
+      <DependentUpon>202105191517435_TestVetCheckCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VetCheck.cs" />
@@ -153,6 +161,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105141612552_HorseList.resx">
       <DependentUpon>202105141612552_HorseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105191511562_shit.resx">
+      <DependentUpon>202105191511562_shit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105191517435_TestVetCheckCreate.resx">
+      <DependentUpon>202105191517435_TestVetCheckCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

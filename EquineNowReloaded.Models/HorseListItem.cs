@@ -20,6 +20,8 @@ namespace EquineNowReloaded.Models
 
         [Display(Name = "Notes")]
         public string IntakeNotes { get; set; }
+
+        [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
     }
 }

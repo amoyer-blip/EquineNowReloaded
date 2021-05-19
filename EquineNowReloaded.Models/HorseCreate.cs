@@ -13,6 +13,7 @@ namespace EquineNowReloaded.Models
         [Display(Name = "Horse's Name")]
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(30, ErrorMessage = "There are too many characters in this field.")]
+
         public string HorseName { get; set; }
 
         [Display(Name = "Needs Urgent Care")]

@@ -40,12 +40,12 @@ namespace EquineNowReloaded.Data
 
         [ForeignKey(nameof(Auction))]
         public int? AuctionId { get; set; }
+
         public virtual Auction Auction { get; set; }
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }
-
     }
 }

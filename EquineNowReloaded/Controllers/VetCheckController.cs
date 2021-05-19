@@ -1,4 +1,6 @@
 ﻿using EquineNowReloaded.Models;
+using EquineNowReloaded.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +14,11 @@ namespace EquineNowReloaded.Controllers
         // GET: VetCheck
         public ActionResult Index()
         {
-            //var userId = Guid.Parse(User.Identity.GetUserId());
-            //var service = new VetCheckService(userId);
-            //var model = service.GetHorses();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new VetCheckService(userId);
+            var model = service.GetVetChecks();
 
-            return View();
+            return View(model);
         }
 
         public ActionResult Create()
@@ -24,26 +26,40 @@ namespace EquineNowReloaded.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create(VetCheckCreate model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(model);
-        //    }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(VetCheckCreate model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
-        //    //var service = CreateVetCheckService();
+            var service = CreateVetCheckService();
 
-        //    if (service.CreateVetCheck(model))
-        //    {
-        //        TempData["SaveResult"] = "The note has been added.";
-        //        return RedirectToAction("Index");
-        //    };
+            if (service.CreateVetCheck(model))
+            {
+                TempData["SaveResult"] = "The VetCheck has been added.";
+                return RedirectToAction("Index");
+            };
 
-        //    ModelState.AddModelError("", "Note could not be created.");
+            ModelState.AddModelError("", "The VetCheck could not be created.");
+            return View(model);
+        }
 
-        //    return View(model);
-        //}
+        public ActionResult Details(int id)
+        {
+            var svc = CreateVetCheckService();
+            var model = svc.GetVetCheckById(id);
+
+            return View(model);
+        }
+
+        private VetCheckService CreateVetCheckService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new VetCheckService(userId);
+            return service;
+        }
     }
 }

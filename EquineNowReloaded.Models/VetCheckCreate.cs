@@ -9,20 +9,16 @@ namespace EquineNowReloaded.Models
 {
     public class VetCheckCreate
     {
+        public int? HorseId { get; set; }
+
         [Required]
         [Display(Name = "Name")]
         public string Name { get; set; }
 
-        public int HorseId { get; set; }
-
-        [Required]
-        public Guid EmployeeId { get; set; }
-
         [Required]
         [Display(Name = "Age")]
         public int Age { get; set; }
-
-        [Required]
+    
         [Display(Name = "Height")]
         public decimal Height { get; set; }
 
@@ -34,15 +30,10 @@ namespace EquineNowReloaded.Models
         [Display(Name = "Sex")]
         public string Sex { get; set; }
 
-        [Required]
         [Display(Name = "Breed")]
         public string Breed { get; set; }
 
-        [Required]
         [Display(Name = "Treatment Plan")]
         public string TreatmentPlan { get; set; }
-
-        [Required]
-        public DateTimeOffset CreatedUtc { get; set; }
     }
 }

@@ -12,21 +12,17 @@ namespace EquineNowReloaded.Models
         [Required]
         [Display(Name = "Auction Name")]
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
-        public string AuctionName { get; set; }
 
+        public string AuctionName { get; set; }
 
         [Display(Name = "City and State")]
         public string AuctionLocation { get; set; }
 
-
         [Display(Name = "Total Horses")]
         public int TotalHorsesRescued { get; set; }
 
-
         [Display(Name = "Date of Auction")]
         public DateTime AuctionDate { get; set; }
-
-
     }
 }
 

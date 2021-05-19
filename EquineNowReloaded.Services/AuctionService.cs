@@ -17,6 +17,7 @@ namespace EquineNowReloaded.Services
         {
             _userId = userId;
         }
+
         public bool CreateAuction(AuctionCreate model)
         {
             var entity =
@@ -35,6 +36,7 @@ namespace EquineNowReloaded.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
         public IEnumerable<AuctionListItem> GetAuctions()
         {
             using (var ctx = new ApplicationDbContext())
@@ -74,7 +76,7 @@ namespace EquineNowReloaded.Services
                        AuctionLocation = entity.AuctionLocation,
                        AuctionDate = entity.AuctionDate,
                        TotalHorsesRescued = entity.TotalHorsesRescued,
-                       Horses=entity.Horses
+                       Horses = entity.Horses
                     };
             }
         }

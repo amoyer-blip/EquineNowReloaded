@@ -9,7 +9,7 @@ namespace EquineNowReloaded.Models
 {
     public class HorseEdit
     {
-        [Required]
+        //[Required]
         public int HorseId { get; set; }
 
         public string HorseName { get; set; }

@@ -9,15 +9,14 @@ namespace EquineNowReloaded.Controllers
     [Authorize]
     public class HorseController : Controller
     {
-        // GET: Note
-        //Displays all horses for the current user 
+        // GET: Horse
+        
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new HorseService(userId);
             var model = service.GetHorses();
-            //var model = new HorseListItem[0];
-
+          
             return View(model);
         }
 
@@ -70,7 +69,7 @@ namespace EquineNowReloaded.Controllers
             var model =
                 new HorseEdit
                 {
-                   // HorseId = detail.HorseId,
+                    HorseId = detail.HorseId,
                     HorseName = detail.HorseName,
                     ImmediateMedical = detail.ImmediateMedical,
                     IntakeNotes = detail.IntakeNotes,
