@@ -10,7 +10,6 @@ namespace EquineNowReloaded.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "ElevenNoteReloaded.Data.ApplicationDbContext";
         }
 
         protected override void Seed(ElevenNoteReloaded.Data.ApplicationDbContext context)

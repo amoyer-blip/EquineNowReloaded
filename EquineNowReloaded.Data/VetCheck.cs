@@ -14,7 +14,7 @@ namespace EquineNowReloaded.Data
         public int VetCheckId { get; set; }
 
         [ForeignKey(nameof(Horse))]
-        public int? HorseId { get; set; }
+        public int HorseId { get; set; }
         public virtual Horse Horse { get; set; }
 
         [Required]

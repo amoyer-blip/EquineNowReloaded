@@ -14,6 +14,8 @@ namespace EquineNowReloaded.Data
         [Key]
         public int HorseId { get; set; }
 
+        public virtual List<VetCheck> VetChecks { get; set; }
+
         [Required]
         public Guid EmployeeId { get; set; }
 

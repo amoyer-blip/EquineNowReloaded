@@ -1,4 +1,5 @@
-﻿using EquineNowReloaded.Models;
+﻿using EquineNowReloaded.Data;
+using EquineNowReloaded.Models;
 using EquineNowReloaded.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -53,6 +54,73 @@ namespace EquineNowReloaded.Controllers
             var model = svc.GetVetCheckById(id);
 
             return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateVetCheckService();
+            var detail = service.GetVetCheckById(id);
+            var model =
+                new VetCheckEdit
+                {
+                    VetCheckId = detail.VetCheckId,
+                    Name = detail.Name,
+                    Age = detail.Age,
+                    Height = detail.Height,
+                    Weight = detail.Weight,
+                    Sex = detail.Sex,
+                    Breed = detail.Breed,
+                    TreatmentPlan = detail.TreatmentPlan
+                };
+            return View(model);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, VetCheckEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.VetCheckId != id)
+            {
+                ModelState.AddModelError("", "The VetCheckId entered does not match.");
+                return View(model);
+            }
+
+            var service = CreateVetCheckService();
+
+            if (service.UpdateVetCheck(model))
+            {
+                TempData["SaveResult"] = "The information has been updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Unable to update.");
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateVetCheckService();
+            var model = svc.GetVetCheckById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteItem(int id)
+        {
+            var service = CreateVetCheckService();
+
+            service.DeleteVetCheck(id);
+
+            TempData["SaveResult"] = "VetCheck deleted.";
+
+            return RedirectToAction("Index");
         }
 
         private VetCheckService CreateVetCheckService()

@@ -58,53 +58,13 @@
     <Compile Include="Employee.cs" />
     <Compile Include="Horse.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202105111528025_InitialCreate.cs" />
-    <Compile Include="Migrations\202105111528025_InitialCreate.Designer.cs">
-      <DependentUpon>202105111528025_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202105201416004_InitialMigration.cs" />
+    <Compile Include="Migrations\202105201416004_InitialMigration.Designer.cs">
+      <DependentUpon>202105201416004_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105111529333_initialMigration.cs" />
-    <Compile Include="Migrations\202105111529333_initialMigration.Designer.cs">
-      <DependentUpon>202105111529333_initialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105111730264_AddDbApplication.cs" />
-    <Compile Include="Migrations\202105111730264_AddDbApplication.Designer.cs">
-      <DependentUpon>202105111730264_AddDbApplication.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105111740580_EditHorse.cs" />
-    <Compile Include="Migrations\202105111740580_EditHorse.Designer.cs">
-      <DependentUpon>202105111740580_EditHorse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105111856063_secondMigration.cs" />
-    <Compile Include="Migrations\202105111856063_secondMigration.Designer.cs">
-      <DependentUpon>202105111856063_secondMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105122011077_AddAuction.cs" />
-    <Compile Include="Migrations\202105122011077_AddAuction.Designer.cs">
-      <DependentUpon>202105122011077_AddAuction.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105122019507_EditAuctionProperty.cs" />
-    <Compile Include="Migrations\202105122019507_EditAuctionProperty.Designer.cs">
-      <DependentUpon>202105122019507_EditAuctionProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105131457014_AddAuctionIdAsFK.cs" />
-    <Compile Include="Migrations\202105131457014_AddAuctionIdAsFK.Designer.cs">
-      <DependentUpon>202105131457014_AddAuctionIdAsFK.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105131716346_AddHorseListToAuction.cs" />
-    <Compile Include="Migrations\202105131716346_AddHorseListToAuction.Designer.cs">
-      <DependentUpon>202105131716346_AddHorseListToAuction.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105141612552_HorseList.cs" />
-    <Compile Include="Migrations\202105141612552_HorseList.Designer.cs">
-      <DependentUpon>202105141612552_HorseList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105191511562_shit.cs" />
-    <Compile Include="Migrations\202105191511562_shit.Designer.cs">
-      <DependentUpon>202105191511562_shit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105191517435_TestVetCheckCreate.cs" />
-    <Compile Include="Migrations\202105191517435_TestVetCheckCreate.Designer.cs">
-      <DependentUpon>202105191517435_TestVetCheckCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202105201424081_Test.cs" />
+    <Compile Include="Migrations\202105201424081_Test.Designer.cs">
+      <DependentUpon>202105201424081_Test.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,44 +90,6 @@
     <None Include="Scripts\umd\popper.js.flow" />
     <None Include="Scripts\umd\popper.js.map" />
     <None Include="Scripts\umd\popper.min.js.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105111528025_InitialCreate.resx">
-      <DependentUpon>202105111528025_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105111529333_initialMigration.resx">
-      <DependentUpon>202105111529333_initialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105111730264_AddDbApplication.resx">
-      <DependentUpon>202105111730264_AddDbApplication.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105111740580_EditHorse.resx">
-      <DependentUpon>202105111740580_EditHorse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105111856063_secondMigration.resx">
-      <DependentUpon>202105111856063_secondMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105122011077_AddAuction.resx">
-      <DependentUpon>202105122011077_AddAuction.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105122019507_EditAuctionProperty.resx">
-      <DependentUpon>202105122019507_EditAuctionProperty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105131457014_AddAuctionIdAsFK.resx">
-      <DependentUpon>202105131457014_AddAuctionIdAsFK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105131716346_AddHorseListToAuction.resx">
-      <DependentUpon>202105131716346_AddHorseListToAuction.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105141612552_HorseList.resx">
-      <DependentUpon>202105141612552_HorseList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105191511562_shit.resx">
-      <DependentUpon>202105191511562_shit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105191517435_TestVetCheckCreate.resx">
-      <DependentUpon>202105191517435_TestVetCheckCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\esm\popper-utils.js" />
@@ -253,6 +175,14 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202105201416004_InitialMigration.resx">
+      <DependentUpon>202105201416004_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105201424081_Test.resx">
+      <DependentUpon>202105201424081_Test.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
