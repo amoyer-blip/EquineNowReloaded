@@ -10,6 +10,7 @@ namespace EquineNowReloaded.Models
 {
     public class AuctionListItem
     {
+        [Display(Name ="Auction Id")]
         public int AuctionId { get; set; }
 
         [Display(Name = "Auction Name")]
@@ -18,8 +19,8 @@ namespace EquineNowReloaded.Models
         [Display(Name = "City and State")]
         public string AuctionLocation { get; set; }
 
-        [Display(Name = "Total Horses")]
-        public int TotalHorsesRescued { get; set; }
+        //[Display(Name = "Total Horses")]
+        //public int TotalHorsesRescued { get; set; }
 
         [Display(Name = "Date of Auction")]
         public DateTime AuctionDate { get; set; }

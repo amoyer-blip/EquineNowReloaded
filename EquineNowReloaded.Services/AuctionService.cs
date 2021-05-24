@@ -25,9 +25,9 @@ namespace EquineNowReloaded.Services
                 {
                     EmployeeId = _userId,
                     AuctionName = model.AuctionName,
+                    AuctionDate = model.AuctionDate,
                     AuctionLocation = model.AuctionLocation,
-                    TotalHorsesRescued = model.TotalHorsesRescued,
-                    AuctionDate = model.AuctionDate
+                    //TotalHorsesRescued = model.TotalHorsesRescued,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -51,9 +51,9 @@ namespace EquineNowReloaded.Services
                         {
                             AuctionId = e.AuctionId,
                             AuctionName = e.AuctionName,
-                            AuctionLocation = e.AuctionLocation,
                             AuctionDate = e.AuctionDate,
-                            TotalHorsesRescued = e.TotalHorsesRescued,
+                            AuctionLocation = e.AuctionLocation,
+                            //TotalHorsesRescued = e.TotalHorsesRescued,
                         }
                         );
                 return query.ToArray();
@@ -71,12 +71,11 @@ namespace EquineNowReloaded.Services
                 return
                     new AuctionDetail
                     {
-                       AuctionId = entity.AuctionId,
-                       AuctionName = entity.AuctionName,
-                       AuctionLocation = entity.AuctionLocation,
-                       AuctionDate = entity.AuctionDate,
-                       TotalHorsesRescued = entity.TotalHorsesRescued,
-                       Horses = entity.Horses
+                        AuctionId = entity.AuctionId,
+                        AuctionName = entity.AuctionName,
+                        AuctionDate = entity.AuctionDate,
+                        AuctionLocation = entity.AuctionLocation,
+                        Horses = entity.Horses
                     };
             }
         }
@@ -92,9 +91,9 @@ namespace EquineNowReloaded.Services
 
                 entity.AuctionId = model.AuctionId;
                 entity.AuctionName = model.AuctionName;
-                entity.AuctionLocation = model.AuctionLocation;
                 entity.AuctionDate = model.AuctionDate;
-                entity.TotalHorsesRescued = model.TotalHorsesRescued;
+                entity.AuctionLocation = model.AuctionLocation;
+                //entity.TotalHorsesRescued = model.TotalHorsesRescued;
 
                 return ctx.SaveChanges() == 1;
             }

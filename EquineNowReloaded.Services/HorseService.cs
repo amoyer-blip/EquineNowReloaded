@@ -30,7 +30,7 @@ namespace EquineNowReloaded.Services
                     Injury = model.Injury,
                     Color = model.Color,
                    // AuctionId = (model.AuctionId is null) ? null : model.AuctionId,
-                    AuctionName = model.AuctionName,
+                    AuctionId = model.AuctionId,
                     CreatedUtc = DateTimeOffset.Now
                 };
 
@@ -86,7 +86,7 @@ namespace EquineNowReloaded.Services
                         Injury = entity.Injury,
                         Color = entity.Color,  
                         AuctionId =(entity.AuctionId is null) ? null : entity.AuctionId,
-                        AuctionName = entity.AuctionName,
+                        //AuctionName = entity.AuctionName,
                         CreatedUtc = entity.CreatedUtc,
                        
                     };
@@ -108,7 +108,7 @@ namespace EquineNowReloaded.Services
                 entity.IntakeNotes = model.IntakeNotes;
                 entity.Injury = model.Injury;
                 entity.Color = model.Color;
-                entity.AuctionName = model.AuctionName;
+                //entity.AuctionName = model.AuctionName;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;

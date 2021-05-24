@@ -9,9 +9,10 @@ namespace EquineNowReloaded.Models
 {
     public class HorseDetail
     {
-        [Display(Name = "HorseId")]
+        [Display(Name = "Horse Id")]
         public int HorseId { get; set; }
-    
+
+        [Display(Name = "Horse's Name")]
         public string HorseName { get; set; }
      
         [Display(Name = "Needs Urgent Care")]
@@ -28,8 +29,8 @@ namespace EquineNowReloaded.Models
 
         public int? AuctionId { get; set; }
 
-        [Display(Name = "Auction")]
-        public string AuctionName { get; set; }
+        //[Display(Name = "Auction")]
+        //public string AuctionName { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

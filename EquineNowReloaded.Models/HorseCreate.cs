@@ -31,7 +31,5 @@ namespace EquineNowReloaded.Models
 
         public int? AuctionId { get; set; }
 
-        [Display(Name = "Auction")]
-        public string AuctionName { get; set; }
     }
 }

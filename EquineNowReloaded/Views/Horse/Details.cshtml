@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
 <div>
-    <h4>HorseDetail</h4>
+    <hr />
+    <h4>Horse Details</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -58,13 +58,13 @@
             @Html.DisplayFor(model => model.Color)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.AuctionName)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.AuctionName)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.CreatedUtc)

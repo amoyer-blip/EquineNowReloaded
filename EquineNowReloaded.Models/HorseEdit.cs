@@ -22,6 +22,6 @@ namespace EquineNowReloaded.Models
      
         public string Color { get; set; }
 
-        public string AuctionName { get; set; }
+        //public string AuctionName { get; set; }
     }
 }

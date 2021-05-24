@@ -75,7 +75,7 @@ namespace EquineNowReloaded.Controllers
                     IntakeNotes = detail.IntakeNotes,
                     Injury = detail.Injury,
                     Color = detail.Color,
-                    AuctionName = detail.AuctionName
+                    //AuctionName = detail.AuctionName
                 };
 
             return View(model);
