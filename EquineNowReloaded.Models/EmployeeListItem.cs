@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EquineNowReloaded.Data
+namespace EquineNowReloaded.Models
 {
-    public class Employee
+    public class EmployeeListItem
     {
         [Key]
         public Guid EmployeeId { get; set; }
@@ -15,11 +15,5 @@ namespace EquineNowReloaded.Data
         [Required]
         [Display(Name = "Employee Name")]
         public string EmployeeName { get; set; }
-
-        public virtual List<Horse> Horses { get; set; } = new List<Horse>();
-
-        public virtual List<Auction> Auctions { get; set; } = new List<Auction>();
-
-        public virtual List<VetCheck> VetChecks { get; set; } = new List<VetCheck>();
     }
 }

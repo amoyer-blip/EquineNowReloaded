@@ -58,6 +58,7 @@
     <Compile Include="AuctionDetail.cs" />
     <Compile Include="AuctionEdit.cs" />
     <Compile Include="AuctionListItem.cs" />
+    <Compile Include="EmployeeListItem.cs" />
     <Compile Include="HorseCreate.cs" />
     <Compile Include="HorseDetail.cs" />
     <Compile Include="HorseEdit.cs" />

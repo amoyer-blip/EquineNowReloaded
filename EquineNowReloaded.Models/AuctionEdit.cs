@@ -16,6 +16,6 @@ namespace EquineNowReloaded.Models
 
         public int TotalHorsesRescued { get; set; }
 
-        public DateTime AuctionDate { get; set; }
+        public DateTimeOffset AuctionDate { get; set; }
     }
 }

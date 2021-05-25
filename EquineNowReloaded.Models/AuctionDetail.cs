@@ -25,7 +25,7 @@ namespace EquineNowReloaded.Models
 
 
         [Display(Name = "Date of Auction")]
-        public DateTime AuctionDate { get; set; }
+        public DateTimeOffset AuctionDate { get; set; }
 
         public int? HorseId { get; set; }
 
