@@ -9,18 +9,11 @@ namespace EquineNowReloaded.Models
 {
     public class VetCheckCreate
     {
-      //  public int VetCheckId { get; set; }
+        [Display(Name = "Horse Id")]
         public int HorseId { get; set; }
-        
-       
-
 
         [Display(Name = "Treatment Plan")]
         public string TreatmentPlan { get; set; }
-
-
-        [Display(Name = "Needs Urgent Care")]
-        public bool ImmediateMedical { get; set; }
 
         [Display(Name = "Notes")]
         public string IntakeNotes { get; set; }

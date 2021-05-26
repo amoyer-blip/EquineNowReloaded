@@ -1,5 +1,5 @@
 ﻿@model EquineNowReloaded.Models.AuctionDetail
-
+<br />
 @{
     ViewBag.Title = "Auction Details";
 }
@@ -25,14 +25,6 @@
             @Html.DisplayFor(model => model.AuctionLocation)
         </dd>
 
-        @*<dt>
-            @Html.DisplayNameFor(model => model.TotalHorsesRescued)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TotalHorsesRescued)
-        </dd>*@
-
         <dt>
             @Html.DisplayNameFor(model => model.AuctionDate)
         </dt>
@@ -41,39 +33,43 @@
             @Html.DisplayFor(model => model.AuctionDate)
         </dd>
 
-        <br />
-        <br />
-        @*<h2>Horses</h2>*@
-
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action active">
-                Horses
-            </a>
-        @*<dt>
-            @Html.DisplayNameFor(model => model.HorseId)
-        </dt>*@
-        @if (Model.Horses is null)
-        {
-            Model.Horses = new List<EquineNowReloaded.Data.Horse>();
-        }
-        else
-        {
-            foreach (var h in Model.Horses)
-            {
-                @*<dd>
-                    @Html.DisplayFor(model => h.HorseId)
-                </dd>*@
-
-        <dd>
-            @Html.DisplayFor(model => h.HorseName)
-
-        </dd>
-            }
-        }
+        <div class="row col-md-12">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horses From Auction </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
+        <div class="list-group">
+            <div class="list-group-item list-group-item-action active">
+                </a>
+                @if (Model.Horses is null)
+                {
+                    Model.Horses = new List<EquineNowReloaded.Data.Horse>();
+                }
+                else
+                {
+                    foreach (var h in Model.Horses)
+                    {
+                        <dd>
+                            @Html.DisplayFor(model => h.HorseName)
+
+                        </dd>
+                    }
+                }
+            </div>
+        </div>
     </dl>
 </div>
+
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.AuctionId }) |
     @Html.ActionLink("Back to List", "Index")

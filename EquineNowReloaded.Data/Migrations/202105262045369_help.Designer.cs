@@ -7,13 +7,13 @@ namespace EquineNowReloaded.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class init2 : IMigrationMetadata
+    public sealed partial class help : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(init2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(help));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105261630158_init2"; }
+            get { return "202105262045369_help"; }
         }
         
         string IMigrationMetadata.Source

@@ -10,10 +10,14 @@ namespace EquineNowReloaded.Models
 {
     public class VetCheckDetail
     {
+        [Display(Name = "Vet Check Id")]
         public int VetCheckId { get; set; }
 
-        [Display(Name = "HorseId")]
+        [Display(Name = "Horse Id")]
         public int? HorseId { get; set; }
+
+        [Display(Name = "Name")]
+        public string Name { get; set; }
 
         public virtual Horse Horse{get; set;}
         public Guid EmployeeId { get;  }

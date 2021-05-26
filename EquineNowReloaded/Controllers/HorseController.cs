@@ -9,8 +9,6 @@ namespace EquineNowReloaded.Controllers
     [Authorize]
     public class HorseController : Controller
     {
-        // GET: Horse
-        
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -70,12 +68,8 @@ namespace EquineNowReloaded.Controllers
                 new HorseEdit
                 {
                     HorseId = detail.HorseId,
-                    HorseName = detail.HorseName,
-                    ImmediateMedical = detail.ImmediateMedical,
-                    IntakeNotes = detail.IntakeNotes,
-                    Injury = detail.Injury,
-                    Color = detail.Color,
-                    //AuctionName = detail.AuctionName
+                    HorseName = detail.HorseName,                 
+                    Color = detail.Color
                 };
 
             return View(model);
@@ -126,7 +120,6 @@ namespace EquineNowReloaded.Controllers
             TempData["SaveResult"] = "Horse deleted.";
 
             return RedirectToAction("Index");
-
         }
     }
 }

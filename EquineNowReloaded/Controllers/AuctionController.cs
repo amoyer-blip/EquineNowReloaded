@@ -12,7 +12,6 @@ namespace EquineNowReloaded.Controllers
 {
     public class AuctionController : Controller
     {
-        // GET: Auction
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -74,7 +73,6 @@ namespace EquineNowReloaded.Controllers
                     AuctionId = detail.AuctionId,
                     AuctionName = detail.AuctionName,
                     AuctionLocation = detail.AuctionLocation,
-                    //TotalHorsesRescued = detail.TotalHorsesRescued,
                     AuctionDate = detail.AuctionDate
                 };
 

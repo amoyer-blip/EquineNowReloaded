@@ -62,8 +62,7 @@ namespace EquineNowReloaded.Services
                         {
                             HorseId = e.HorseId,
                             HorseName = e.HorseName,
-                            Color = e.Color,
-
+                            Color = e.Color
                         }
                         );
                 return query.ToArray();
@@ -85,8 +84,7 @@ namespace EquineNowReloaded.Services
                         Color = entity.Color,
                         AuctionId = (entity.AuctionId is null) ? null : entity.AuctionId,
                         AuctionName = ctx.Auctions.FirstOrDefault(a => a.AuctionId == entity.AuctionId).AuctionName,
-                        CreatedUtc = entity.CreatedUtc,
-
+                        CreatedUtc = entity.CreatedUtc
                     };
             }
         }
@@ -108,8 +106,6 @@ namespace EquineNowReloaded.Services
                 entity.Sex = model.Sex;
                 entity.Breed = model.Breed;
                 entity.Color = model.Color;
-
-                //entity.AuctionName = model.AuctionName;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;

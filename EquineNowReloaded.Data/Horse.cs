@@ -42,8 +42,6 @@ namespace EquineNowReloaded.Data
         [Display(Name = "Breed")]
         public string Breed { get; set; }
 
-       
-
         [Required]
         [Display(Name = "Color and Markings")]
         public string Color { get; set; }

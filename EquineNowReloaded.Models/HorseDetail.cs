@@ -9,30 +9,20 @@ namespace EquineNowReloaded.Models
 {
     public class HorseDetail
     {
-
-        public string AuctionName { get; set; }
         [Display(Name = "Horse Id")]
         public int HorseId { get; set; }
 
         [Display(Name = "Horse's Name")]
         public string HorseName { get; set; }
-     
-        [Display(Name = "Needs Urgent Care")]
-        public bool ImmediateMedical { get; set; }
-     
-        [Display(Name = "Notes")]
-        public string IntakeNotes { get; set; }
-        
-        [Display(Name = "Injuries")]
-        public string Injury { get; set; }
 
-        [Display(Name = "Color and Markings")]
-        public string Color { get; set; }
-
+        [Display(Name = "Auction Id")]
         public int? AuctionId { get; set; }
 
-        //[Display(Name = "Auction")]
-        //public string AuctionName { get; set; }
+        [Display(Name = "Auction Name")]
+        public string AuctionName { get; set; }
+      
+        [Display(Name = "Color/Markings")]
+        public string Color { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

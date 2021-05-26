@@ -25,7 +25,6 @@ namespace EquineNowReloaded.Services
                 {
                     HorseId = model.HorseId,
                     EmployeeId = _userId,
-                    ImmediateMedical = model.ImmediateMedical,
                     Injury = model.Injury,
                     IntakeNotes = model.IntakeNotes,
                     TreatmentPlan = model.TreatmentPlan,
@@ -37,7 +36,7 @@ namespace EquineNowReloaded.Services
                 //var Horse = ctx.Horses.FirstOrDefault(h => h.HorseId == entity.HorseId);
                 //entity.Horse = Horse;
                 ctx.VetChecks.Add(entity);
-                return ctx.SaveChanges() > 0; 
+                return ctx.SaveChanges() > 0;
             }
         }
 
@@ -54,9 +53,8 @@ namespace EquineNowReloaded.Services
                         new VetCheckListItem
                         {
                             VetCheckId = e.VetCheckId,
-                            HorseId =e.HorseId,
-                            //Name = e.Name,
-                            //Breed = e.Breed,
+                            //HorseId =e.HorseId,
+                            Name = ctx.Horses.FirstOrDefault(h => h.HorseId == e.HorseId).HorseName
                             //CreatedUtc = e.CreatedUtc
                         }
                       );
@@ -73,12 +71,13 @@ namespace EquineNowReloaded.Services
                     .SingleOrDefault(e => e.VetCheckId == id && e.EmployeeId == _userId);
 
                 //var Horse = ctx.Horses.SingleOrDefault(h => h.HorseId == entity.HorseId);
-                return      
+                return
                     new VetCheckDetail
                     {
-                       HorseId = entity.HorseId,
-                       VetCheckId = entity.VetCheckId,
-                       Horse= ctx.Horses.Find(entity.HorseId),
+                        HorseId = entity.HorseId,
+                        VetCheckId = entity.VetCheckId,
+                        Horse = ctx.Horses.Find(entity.HorseId),
+                        Name = ctx.Horses.Find(entity.HorseId).HorseName,
                         TreatmentPlan = entity.TreatmentPlan,
                         Injury = entity.Injury,
                         IntakeNotes = entity.IntakeNotes,

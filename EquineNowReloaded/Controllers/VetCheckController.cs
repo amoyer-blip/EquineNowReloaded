@@ -64,8 +64,8 @@ namespace EquineNowReloaded.Controllers
                 new VetCheckEdit
                 {
                     VetCheckId = detail.VetCheckId,
-                   Injury = detail.Injury,
-                   IntakeNotes = detail.IntakeNotes,
+                    Injury = detail.Injury,
+                    IntakeNotes = detail.IntakeNotes,
                     TreatmentPlan = detail.TreatmentPlan
                 };
             return View(model);

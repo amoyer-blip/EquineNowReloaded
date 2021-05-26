@@ -15,17 +15,7 @@ namespace EquineNowReloaded.Models
         [Display(Name = "Horse's Name")]
         public string HorseName { get; set; }
 
-        [Required]
-        [Display(Name = "Needs Urgent Care")]
-        public bool ImmediateMedical { get; set; }
-
         [Display(Name = "Color and Markings")]
         public string Color { get; set; }
-
-        [Display(Name = "Notes")]
-        public string IntakeNotes { get; set; }
-
-        [Display(Name = "Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
     }
 }

@@ -1,63 +1,57 @@
 ﻿@model IEnumerable<EquineNowReloaded.Models.HorseListItem>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Horses";
 }
-
-<h2>Index</h2>
-
+<h2>Horses</h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add Horse", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.HorseId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HorseName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImmediateMedical)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Color)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IntakeNotes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
-        <th></th>
-    </tr>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        @ViewBag.SaveResult
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.HorseId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HorseName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImmediateMedical)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Color)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IntakeNotes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedUtc)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
 }
+<table class="table table-bordered table-striped table-hover display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HorseId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorseId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.HorseId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.HorseId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.HorseId })
+            </td>
+        </tr>
+    }
 
 </table>

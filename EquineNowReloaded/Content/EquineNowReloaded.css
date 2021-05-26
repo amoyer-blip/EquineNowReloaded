@@ -26,9 +26,7 @@ textarea {
 
 li a {
     color: white;
-
 }
-
 
 #navbar {
     background-color: #3b7c8c;
@@ -37,10 +35,10 @@ li a {
     color: white;
 }
 
-#top-right{
-padding-right: 20px;
-padding-top: 15px;
-padding-bottom: 15px;
+#top-right {
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 
@@ -51,10 +49,21 @@ padding-bottom: 15px;
     border-bottom: groove;
 }
 
-#horse-table{
-    color: orange;
+.list-group-item.active {
+    z-index: auto;
+    color: black;
+    background-color: white;
+    border-color: black;
+    text-align: left;
 }
 
-#addVetCheck{
-    color:red;
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
