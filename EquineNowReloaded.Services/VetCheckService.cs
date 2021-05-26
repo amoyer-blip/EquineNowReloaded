@@ -24,22 +24,20 @@ namespace EquineNowReloaded.Services
                 new VetCheck()
                 {
                     HorseId = model.HorseId,
-                    //HorseId = (model.HorseId is null) ? null : model.HorseId,
                     EmployeeId = _userId,
-                    Age = model.Age,
-                    Height = model.Height,
-                    Weight = model.Weight,
-                    Sex = model.Sex,
-                    Breed = model.Breed,
+                    ImmediateMedical = model.ImmediateMedical,
+                    Injury = model.Injury,
+                    IntakeNotes = model.IntakeNotes,
                     TreatmentPlan = model.TreatmentPlan,
-                    Name = model.Name,
                     CreatedUtc = DateTimeOffset.Now
                 };
 
             using (var ctx = new ApplicationDbContext())
             {
+                //var Horse = ctx.Horses.FirstOrDefault(h => h.HorseId == entity.HorseId);
+                //entity.Horse = Horse;
                 ctx.VetChecks.Add(entity);
-                return ctx.SaveChanges() == 1; 
+                return ctx.SaveChanges() > 0; 
             }
         }
 
@@ -56,7 +54,7 @@ namespace EquineNowReloaded.Services
                         new VetCheckListItem
                         {
                             VetCheckId = e.VetCheckId,
-                            HorseId = e.HorseId,
+                            HorseId =e.HorseId,
                             //Name = e.Name,
                             //Breed = e.Breed,
                             //CreatedUtc = e.CreatedUtc
@@ -80,14 +78,10 @@ namespace EquineNowReloaded.Services
                     {
                        HorseId = entity.HorseId,
                        VetCheckId = entity.VetCheckId,
-                       //(entity.HorseId is null) ? null : entity.HorseId,
-                        Name = entity.Name,
-                        Age = entity.Age,
-                        Height = entity.Height,
-                        Weight = entity.Weight,
-                        Sex = entity.Sex,
-                        Breed = entity.Breed,
+                       Horse= ctx.Horses.Find(entity.HorseId),
                         TreatmentPlan = entity.TreatmentPlan,
+                        Injury = entity.Injury,
+                        IntakeNotes = entity.IntakeNotes,
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
@@ -104,12 +98,8 @@ namespace EquineNowReloaded.Services
                     .Single(e => e.VetCheckId == model.VetCheckId && e.EmployeeId == _userId);
 
                 entity.VetCheckId = model.VetCheckId;
-                entity.Name = model.Name;
-                entity.Age = model.Age;
-                entity.Height = model.Height;
-                entity.Weight = model.Weight;
-                entity.Sex = model.Sex;
-                entity.Breed = model.Breed;
+                entity.IntakeNotes = model.IntakeNotes;
+                entity.Injury = model.Injury;
                 entity.TreatmentPlan = model.TreatmentPlan;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 

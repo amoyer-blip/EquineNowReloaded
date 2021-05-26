@@ -40,7 +40,7 @@ namespace EquineNowReloaded.Controllers
 
             if (service.CreateVetCheck(model))
             {
-                TempData["SaveResult"] = "The VetCheck has been added.";
+                //TempData["SaveResult"] = "The VetCheck has been added.";
                 return RedirectToAction("Index");
             };
 
@@ -64,12 +64,8 @@ namespace EquineNowReloaded.Controllers
                 new VetCheckEdit
                 {
                     VetCheckId = detail.VetCheckId,
-                    Name = detail.Name,
-                    Age = detail.Age,
-                    Height = detail.Height,
-                    Weight = detail.Weight,
-                    Sex = detail.Sex,
-                    Breed = detail.Breed,
+                   Injury = detail.Injury,
+                   IntakeNotes = detail.IntakeNotes,
                     TreatmentPlan = detail.TreatmentPlan
                 };
             return View(model);

@@ -14,35 +14,23 @@ namespace EquineNowReloaded.Data
         public int VetCheckId { get; set; }
 
         [ForeignKey(nameof(Horse))]
-        public int HorseId { get; set; }
+        public int? HorseId { get; set; }
         public virtual Horse Horse { get; set; }
 
-        [Required]
+        //[Required]
         public Guid EmployeeId { get; set; }
 
         [Required]
-        [Display(Name = "Name")]
-        public string Name { get; set; }
+        [Display(Name = "Needs Urgent Care")]
+        public bool ImmediateMedical { get; set; }
 
         [Required]
-        [Display(Name = "Age")]
-        public int Age { get; set; }
+        [Display(Name = "Notes")]
+        public string IntakeNotes { get; set; }
 
         [Required]
-        [Display(Name = "Height")]
-        public decimal Height { get; set; }
-
-        [Required]
-        [Display(Name = "Weight")]
-        public decimal Weight { get; set; }
-
-        [Required]
-        [Display(Name = "Sex")]
-        public string Sex { get; set; }
-
-        [Required]
-        [Display(Name = "Breed")]
-        public string Breed { get; set; }
+        [Display(Name = "Injuries")]
+        public string Injury { get; set; }
 
         [Required]
         [Display(Name = "Treatment Plan")]

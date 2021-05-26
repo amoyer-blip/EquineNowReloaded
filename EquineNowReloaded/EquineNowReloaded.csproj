@@ -333,9 +333,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Horse\Index.cshtml" />
-    <Content Include="Views\Horse\Details.cshtml" />
-    <Content Include="Views\Horse\Edit.cshtml" />
     <Content Include="Views\Horse\Delete.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTimeOffSet.cshtml" />
     <Content Include="Views\Auction\Index.cshtml" />
@@ -353,13 +350,16 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Horse\Create.cshtml" />
-    <Content Include="Views\VetCheck\Create.cshtml" />
-    <Content Include="Views\VetCheck\Details.cshtml" />
     <Content Include="Views\VetCheck\Edit.cshtml" />
-    <Content Include="Views\VetCheck\Delete.cshtml" />
-    <Content Include="Views\VetCheck\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Horse\Create.cshtml" />
+    <Content Include="Views\Horse\Details.cshtml" />
+    <Content Include="Views\Horse\Edit.cshtml" />
+    <Content Include="Views\Horse\Index.cshtml" />
+    <Content Include="Views\VetCheck\Create.cshtml" />
+    <Content Include="Views\VetCheck\Delete.cshtml" />
+    <Content Include="Views\VetCheck\Details.cshtml" />
+    <Content Include="Views\VetCheck\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

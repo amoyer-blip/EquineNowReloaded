@@ -20,52 +20,53 @@
         @TempData["SaveResult"]
     </div>
 }
-<table class="table table-bordered">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AuctionId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AuctionName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AuctionLocation)
-        </th>
-        @*<th>
-                @Html.DisplayNameFor(model => model.TotalHorsesRescued)
-            </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.AuctionDate)
-        </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.Horses)
-        </th>*@
-    </tr>
 
-    @foreach (var item in Model)
-    {
+
+<table class="table table-bordered table-striped table-hover display">
+    <thead>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AuctionId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AuctionName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AuctionLocation)
-            </td>
-            @*<td>
+            <th>
+                @Html.DisplayNameFor(model => model.AuctionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuctionName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuctionLocation)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.AuctionDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuctionId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuctionName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuctionLocation)
+                </td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.TotalHorsesRescued)
                 </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.AuctionDate)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.AuctionId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.AuctionId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.AuctionId })
-            </td>
-        </tr>
-    }
-
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuctionDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AuctionId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AuctionId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AuctionId })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>

@@ -16,14 +16,24 @@ namespace EquineNowReloaded.Models
 
         public string HorseName { get; set; }
 
-        [Display(Name = "Needs Urgent Care")]
-        public bool ImmediateMedical { get; set; }
+        [Display(Name = "Age")]
+        public int Age { get; set; }
 
-        [Display(Name = "Notes")]
-        public string IntakeNotes { get; set; }
-        
-        [Display(Name = "Injuries")]
-        public string Injury { get; set; }
+
+        [Display(Name = "Height")]
+        public decimal Height { get; set; }
+
+
+        [Display(Name = "Weight")]
+        public decimal Weight { get; set; }
+
+
+        [Display(Name = "Sex")]
+        public string Sex { get; set; }
+
+
+        [Display(Name = "Breed")]
+        public string Breed { get; set; }
 
         [Required]
         [Display(Name = "Color and Markings")]

@@ -14,25 +14,35 @@ namespace EquineNowReloaded.Data
         [Key]
         public int HorseId { get; set; }
 
-        public virtual List<VetCheck> VetChecks { get; set; }
+        public virtual List<VetCheck> VetChecks { get; set; } = new List<VetCheck>();
 
         [Required]
         public Guid EmployeeId { get; set; }
 
         [Required]
         public string HorseName { get; set; }
+      
+        [Required]
+        [Display(Name = "Age")]
+        public int Age { get; set; }
 
         [Required]
-        [Display(Name = "Needs Urgent Care")]
-        public bool ImmediateMedical { get; set; }
+        [Display(Name = "Height")]
+        public decimal Height { get; set; }
 
         [Required]
-        [Display(Name = "Notes")]
-        public string IntakeNotes { get; set; }
+        [Display(Name = "Weight")]
+        public decimal Weight { get; set; }
 
         [Required]
-        [Display(Name = "Injuries")]
-        public string Injury { get; set; }
+        [Display(Name = "Sex")]
+        public string Sex { get; set; }
+
+        [Required]
+        [Display(Name = "Breed")]
+        public string Breed { get; set; }
+
+       
 
         [Required]
         [Display(Name = "Color and Markings")]

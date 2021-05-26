@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,18 +11,13 @@ namespace EquineNowReloaded.Models
     {
         public int VetCheckId { get; set; }
 
-        public string Name { get; set; }
-
-        public int Age { get; set; }
-
-        public decimal Height { get; set; }
-
-        public decimal Weight { get; set; }
-
-        public string Sex { get; set; }
-
-        public string Breed { get; set; }
-
+        [Display(Name = "Treatment Plan")]
         public string TreatmentPlan { get; set; }
+
+        [Display(Name = "Notes")]
+        public string IntakeNotes { get; set; }
+
+        [Display(Name = "Injuries")]
+        public string Injury { get; set; }
     }
 }

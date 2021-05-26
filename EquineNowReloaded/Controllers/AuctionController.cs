@@ -74,7 +74,7 @@ namespace EquineNowReloaded.Controllers
                     AuctionId = detail.AuctionId,
                     AuctionName = detail.AuctionName,
                     AuctionLocation = detail.AuctionLocation,
-                    TotalHorsesRescued = detail.TotalHorsesRescued,
+                    //TotalHorsesRescued = detail.TotalHorsesRescued,
                     AuctionDate = detail.AuctionDate
                 };
 

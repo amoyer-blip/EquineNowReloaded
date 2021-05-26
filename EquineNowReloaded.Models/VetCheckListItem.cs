@@ -13,7 +13,7 @@ namespace EquineNowReloaded.Models
         public int VetCheckId { get; set; }
 
         [Display(Name = "Horse Id")]
-        public int HorseId { get; set; }
+        public int? HorseId { get; set; }
 
         [Display(Name = "Name")]
         public string Name { get; set; }

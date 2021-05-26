@@ -25,11 +25,12 @@ namespace EquineNowReloaded.Services
                 {
                     EmployeeId = _userId,
                     HorseName = model.HorseName,
-                    ImmediateMedical = model.ImmediateMedical,
-                    IntakeNotes = model.IntakeNotes,
-                    Injury = model.Injury,
+                    Age = model.Age,
+                    Breed = model.Breed,
+                    Height = model.Height,
+                    Weight = model.Weight,
+                    Sex = model.Sex,
                     Color = model.Color,
-                   // AuctionId = (model.AuctionId is null) ? null : model.AuctionId,
                     AuctionId = model.AuctionId,
                     CreatedUtc = DateTimeOffset.Now
                 };
@@ -46,7 +47,7 @@ namespace EquineNowReloaded.Services
             }
         }
 
-     
+
         public IEnumerable<HorseListItem> GetHorses()
         {
             using (var ctx = new ApplicationDbContext())
@@ -62,7 +63,7 @@ namespace EquineNowReloaded.Services
                             HorseId = e.HorseId,
                             HorseName = e.HorseName,
                             Color = e.Color,
-                            IntakeNotes = e.IntakeNotes
+
                         }
                         );
                 return query.ToArray();
@@ -81,14 +82,11 @@ namespace EquineNowReloaded.Services
                     {
                         HorseId = entity.HorseId,
                         HorseName = entity.HorseName,
-                        ImmediateMedical = entity.ImmediateMedical,
-                        IntakeNotes = entity.IntakeNotes,
-                        Injury = entity.Injury,
-                        Color = entity.Color,  
-                        AuctionId =(entity.AuctionId is null) ? null : entity.AuctionId,
-                        //AuctionName = entity.AuctionName,
+                        Color = entity.Color,
+                        AuctionId = (entity.AuctionId is null) ? null : entity.AuctionId,
+                        AuctionName = ctx.Auctions.FirstOrDefault(a => a.AuctionId == entity.AuctionId).AuctionName,
                         CreatedUtc = entity.CreatedUtc,
-                       
+
                     };
             }
         }
@@ -104,10 +102,13 @@ namespace EquineNowReloaded.Services
 
                 entity.HorseId = model.HorseId;
                 entity.HorseName = model.HorseName;
-                entity.ImmediateMedical = model.ImmediateMedical;
-                entity.IntakeNotes = model.IntakeNotes;
-                entity.Injury = model.Injury;
+                entity.Age = model.Age;
+                entity.Height = model.Height;
+                entity.Weight = model.Weight;
+                entity.Sex = model.Sex;
+                entity.Breed = model.Breed;
                 entity.Color = model.Color;
+
                 //entity.AuctionName = model.AuctionName;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 

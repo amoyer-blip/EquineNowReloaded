@@ -3,35 +3,36 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Scripts.Render("~/bundles/jquery")
+    <link rel="stylesheet" type="text/css" href="~/Content/StyleSheet1.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>@ViewBag.Title - EquineNow</title>
-        @Styles.Render("~/Content/css")
-        @Styles.Render("~/Content/EquineNowReloaded.css")
-        @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/EquineNowReloaded.css")
+    @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light text text-success" id="navbar">
-        <a class="navbar-brand" href="#">EquineNow</a>
+        <a class="navbar-brand" @Html.ActionLink("EquineNow", "Index", "Home")
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="ml-5">@Html.ActionLink("Home", "Index", "Home")</li>
-                <li class="ml-5">@Html.ActionLink("Horses", "Index", "Horse")</li>
-                <li class="ml-5">@Html.ActionLink("Auctions", "Index", "Auction")</li>
-                <li class="ml-5">@Html.ActionLink("VetChecks", "Index", "VetCheck")</li>
-                <li class="ml-5">@Html.ActionLink("About", "About", "Home")</li>
-                <li class="ml-5">@Html.ActionLink("Contact", "Contact", "Home")</li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="ml-5">@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="ml-5">@Html.ActionLink("Horses", "Index", "Horse")</li>
+            <li class="ml-5">@Html.ActionLink("Auctions", "Index", "Auction")</li>
+            <li class="ml-5">@Html.ActionLink("VetChecks", "Index", "VetCheck")</li>
+            <li class="ml-5">@Html.ActionLink("About", "About", "Home")</li>
+            <li class="ml-5">@Html.ActionLink("Contact", "Contact", "Home")</li>
 
-            </ul>
-        </div>
-        @Html.Partial("_LoginPartial")
+        </ul>
+    </div>
+    @Html.Partial("_LoginPartial")
 
     </nav>
 
@@ -43,7 +44,7 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
+
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

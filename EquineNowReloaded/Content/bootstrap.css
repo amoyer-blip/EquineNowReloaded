@@ -156,10 +156,12 @@ a {
     color: #007bff;
     text-decoration: none;
     background-color: transparent;
+    color: black;
+
 }
 
     a:hover {
-        color: #0056b3;
+        color: black;
         text-decoration: underline;
     }
 
@@ -195,6 +197,7 @@ figure {
 img {
     vertical-align: middle;
     border-style: none;
+
 }
 
 svg {

@@ -3,6 +3,7 @@
     padding-bottom: 20px;
 }
 
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -23,21 +24,37 @@ textarea {
     max-width: 280px;
 }
 
-li a{
-    color: black;
+li a {
+    color: white;
+
 }
+
 
 #navbar {
-    background-color: #ADD8E6;
+    background-color: #3b7c8c;
     text-align: right;
     margin-top: -50px;
+    color: white;
 }
 
-#bitch{
-    padding-right: 20px;
+#top-right{
+padding-right: 20px;
+padding-top: 15px;
+padding-bottom: 15px;
 }
 
-#shit{
-    padding-top: 15px;
-    padding-bottom: 15px;
+
+#main-jumbo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    border-bottom: groove;
+}
+
+#horse-table{
+    color: orange;
+}
+
+#addVetCheck{
+    color:red;
 }

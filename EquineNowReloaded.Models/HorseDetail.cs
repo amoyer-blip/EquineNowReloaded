@@ -9,6 +9,8 @@ namespace EquineNowReloaded.Models
 {
     public class HorseDetail
     {
+
+        public string AuctionName { get; set; }
         [Display(Name = "Horse Id")]
         public int HorseId { get; set; }
 

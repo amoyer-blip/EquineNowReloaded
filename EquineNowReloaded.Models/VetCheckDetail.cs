@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EquineNowReloaded.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,28 +15,17 @@ namespace EquineNowReloaded.Models
         [Display(Name = "HorseId")]
         public int? HorseId { get; set; }
 
+        public virtual Horse Horse{get; set;}
         public Guid EmployeeId { get;  }
-
-        [Display(Name = "Name")]
-        public string Name { get; set; }
-
-        [Display(Name = "Age")]
-        public int Age { get; set; }
-
-        [Display(Name = "Height")]
-        public decimal Height { get; set; }
-
-        [Display(Name = "Weight")]
-        public decimal Weight { get; set; }
-
-        [Display(Name = "Sex")]
-        public string Sex { get; set; }
-
-        [Display(Name = "Breed")]
-        public string Breed { get; set; }
 
         [Display(Name = "Treatment Plan")]
         public string TreatmentPlan { get; set; }
+
+        [Display(Name = "Notes")]
+        public string IntakeNotes { get; set; }
+
+        [Display(Name = "Injuries")]
+        public string Injury { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

@@ -58,17 +58,13 @@
     <Compile Include="Employee.cs" />
     <Compile Include="Horse.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202105201416004_InitialMigration.cs" />
-    <Compile Include="Migrations\202105201416004_InitialMigration.Designer.cs">
-      <DependentUpon>202105201416004_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202105261600138_init.cs" />
+    <Compile Include="Migrations\202105261600138_init.Designer.cs">
+      <DependentUpon>202105261600138_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105201424081_Test.cs" />
-    <Compile Include="Migrations\202105201424081_Test.Designer.cs">
-      <DependentUpon>202105201424081_Test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105251802255_AddsDateTimeOffset.cs" />
-    <Compile Include="Migrations\202105251802255_AddsDateTimeOffset.Designer.cs">
-      <DependentUpon>202105251802255_AddsDateTimeOffset.cs</DependentUpon>
+    <Compile Include="Migrations\202105261630158_init2.cs" />
+    <Compile Include="Migrations\202105261630158_init2.Designer.cs">
+      <DependentUpon>202105261630158_init2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -181,14 +177,11 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105201416004_InitialMigration.resx">
-      <DependentUpon>202105201416004_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105261600138_init.resx">
+      <DependentUpon>202105261600138_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105201424081_Test.resx">
-      <DependentUpon>202105201424081_Test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105251802255_AddsDateTimeOffset.resx">
-      <DependentUpon>202105251802255_AddsDateTimeOffset.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105261630158_init2.resx">
+      <DependentUpon>202105261630158_init2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
