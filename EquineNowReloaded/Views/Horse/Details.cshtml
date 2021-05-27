@@ -7,7 +7,6 @@
 <h2>Horse Details</h2>
 
 <div>
-
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -24,6 +23,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.HorseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
         </dd>
 
         <dt>
@@ -51,6 +58,38 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Breed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Breed)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.CreatedUtc)
         </dt>
 
@@ -69,6 +108,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.HorseId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HorseId}) |
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -16,9 +16,6 @@ namespace EquineNowReloaded.Models
         [Display(Name = "Horse's Name")]
         public string HorseName { get; set; }
 
-        [Display(Name = "Immediate Medical")]
-        public bool ImmediateMedical { get; set; }
-
         [Display(Name = "Notes")]
         public string IntakeNotes { get; set; }
 

@@ -32,6 +32,7 @@ namespace EquineNowReloaded.Services
                     Sex = model.Sex,
                     Color = model.Color,
                     AuctionId = model.AuctionId,
+                    //Notes = model.Notes,
                     CreatedUtc = DateTimeOffset.Now
                 };
 
@@ -81,7 +82,12 @@ namespace EquineNowReloaded.Services
                     {
                         HorseId = entity.HorseId,
                         HorseName = entity.HorseName,
+                        Age = entity.Age,
                         Color = entity.Color,
+                        Height= entity.Height,
+                        Weight=entity.Weight,
+                        Sex=entity.Sex,
+                        Breed=entity.Breed,
                         AuctionId = (entity.AuctionId is null) ? null : entity.AuctionId,
                         AuctionName = ctx.Auctions.FirstOrDefault(a => a.AuctionId == entity.AuctionId).AuctionName,
                         CreatedUtc = entity.CreatedUtc
