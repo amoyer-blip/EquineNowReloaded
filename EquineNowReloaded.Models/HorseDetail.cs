@@ -39,6 +39,9 @@ namespace EquineNowReloaded.Models
         [Display(Name = "Breed")]
         public string Breed { get; set; }
 
+        [Display(Name = "Notes")]
+        public string IntakeNotes { get; set; }
+
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 

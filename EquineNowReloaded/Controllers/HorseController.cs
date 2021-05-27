@@ -68,8 +68,14 @@ namespace EquineNowReloaded.Controllers
                 new HorseEdit
                 {
                     HorseId = detail.HorseId,
-                    HorseName = detail.HorseName,                 
-                    Color = detail.Color
+                    HorseName = detail.HorseName, 
+                    Color = detail.Color,
+                    Age = detail.Age,
+                    Height = detail.Height,
+                    Weight = detail.Weight,
+                    Sex = detail.Sex,
+                    Breed = detail.Breed,
+                    IntakeNotes = detail.IntakeNotes
                 };
 
             return View(model);

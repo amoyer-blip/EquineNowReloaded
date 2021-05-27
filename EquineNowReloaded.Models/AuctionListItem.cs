@@ -19,9 +19,6 @@ namespace EquineNowReloaded.Models
         [Display(Name = "City and State")]
         public string AuctionLocation { get; set; }
 
-        //[Display(Name = "Total Horses")]
-        //public int TotalHorsesRescued { get; set; }
-
         [Display(Name = "Date of Auction")]
         public DateTimeOffset AuctionDate { get; set; }
 

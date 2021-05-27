@@ -16,11 +16,8 @@ namespace EquineNowReloaded.Models
         [Display(Name = "Horse's Name")]
         public string HorseName { get; set; }
 
-        [Display(Name = "Notes")]
-        public string IntakeNotes { get; set; }
-
-        [Display(Name = "Injuries")]
-        public string Injury { get; set; }
+        //[Display(Name = "Injuries")]
+        //public string Injury { get; set; }
 
         [Display(Name = "Color/Markings")]
         public string Color { get; set; }
@@ -40,5 +37,7 @@ namespace EquineNowReloaded.Models
         [Display(Name = "Breed")]
         public string Breed { get; set; }
 
+        [Display(Name = "Notes")]
+        public string IntakeNotes { get; set; }
     }
 }

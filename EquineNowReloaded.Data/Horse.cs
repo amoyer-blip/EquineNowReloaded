@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace EquineNowReloaded.Data
 {
-    //public enum Color { Sorrel = 1, Bay, Palomino, Dun, DappleGray, Buckskin, Roan, Paint, Appaloosa, Gray, Chestnut, Black }
     public class Horse
     {
         [Key]
